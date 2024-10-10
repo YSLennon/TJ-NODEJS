@@ -1,0 +1,58 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+    // get axios
+
+    // axios.get('https://www.zerocho.com/api/get')
+    //     .then((result) => {
+    //         console.log(result);
+    //         console.log(result.data);
+    //     })
+    //     .catch((error) => {
+    //         console.error(error);
+    //     })
+
+    // post axios
+
+    // (async() => {
+    //     try{
+    //         const result = await axios.get('https://www.zerocho.com/api/get');
+    //         console.log(result);
+    //         console.log(result.data);
+    //     } catch(error){
+    //         console.error(error);
+    //     }
+    // })();
+
+
+    // formData
+
+    // (async() => {
+    //     try{
+    //         const formData = new FormData();
+    //         formData.append('name', 'zerocho');
+    //         formData.append('birth', 1994);
+    //         const result = await axios.post('https://www.zerocho.com/api/post/formdata', formData);
+    //         console.log(result);
+    //         console.log(result.data);
+    //     } catch(error){
+    //         console.error(error);
+    //     }
+    // })();
+
+    // encodeURIComponent(한글입력) / decodeURIComponent
+
+    (async () => {
+        try{
+            console.log(decodeURIComponent('%EB%85%B8%EB%93%9C'));
+
+            const result = await axios.get(`https://www.zerocho.com/api/search/${encodeURIComponent('노드')}`)
+
+            console.log(result);
+            console.log(result.data);
+        }catch(error){
+            console.log(error);
+        }
+    })();
+        
+    
