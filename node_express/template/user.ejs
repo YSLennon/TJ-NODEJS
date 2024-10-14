@@ -15,9 +15,7 @@
                     <div>
                         <%=item.name%>
                         <button type="button" onclick="location.href='/user/<%=item.id%>'">수정하기</button>
-                        <!-- <form action="/user/<%=item.id%>?_method=DELETE" method="POST">
-                            <button type="submit">삭제하기</button>
-                        </form>  AJAX로 만들어두기! -->
+                        <button type="button" onclick="fnDelete('<%=item.id%>')">삭제하기</button>
                     </div>
                 </li>
             <%})
@@ -27,4 +25,12 @@
     </form>
 </body>
 </html>
-
+<script>
+    function fnDelete(item){
+        const form = document.createElement('form');
+        form.action = `/user/${item}?_method=DELETE`;
+        form.method = "POST";
+        document.body.appendChild(form);
+        form.submit();        
+    }
+</script>
