@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/insert" method="get">
+        <ul>
+        <%
+            list.forEach(item => { %>
+                <!-- <li><%= "<div>" + item.id + "</div>" %></li> -->
+                <li>
+                    <div>
+                        <%=item.name%>
+                        <button type="button" onclick="location.href='/user/<%=item.id%>'">수정하기</button>
+                        <!-- <form action="/user/<%=item.id%>?_method=DELETE" method="POST">
+                            <button type="submit">삭제하기</button>
+                        </form>  AJAX로 만들어두기! -->
+                    </div>
+                </li>
+            <%})
+        %>
+        </ul>
+        <button>글쓰기</button>
+    </form>
+</body>
+</html>
+

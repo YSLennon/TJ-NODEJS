@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/?_method=PUT" method="POST">
+        <div>
+            <label>
+                id : <input name="id" type='text' value="<%= user.id %>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                pwd : <input name="pwd" type='password' value="<%= user.pwd %>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                name : <input name="name" type='text' value="<%= user.name %>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input name="gender" type='radio' value="M" <%= user.gender === 'M' ? 'checked' : '' %> />남
+            </label>
+            <label>
+                <input name="gender" type='radio' value="F" <%= user.gender === 'F' ? 'checked' : '' %> />여
+            </label>
+        </div>
+        
+        <button>업데이트</button>
+    </form>
+</body>
+</html>

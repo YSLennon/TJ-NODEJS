@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-
+const express = require('express');
+const app = express();
+const methodOverride = require('method-override');
 
 // 확장자 및 경로 설정
 app.set('view engine', 'ejs');
@@ -11,8 +11,10 @@ app.set('views', './template');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // 주소 관리를 외부로 분리함
+app.use(methodOverride('_method'));
 app.use('/board', require('./route/boardRoute'));
-
+app.use('/user', require('./route/userRoute'));
+app.use('/student', require('./route/studentRoute'))
 
 
 

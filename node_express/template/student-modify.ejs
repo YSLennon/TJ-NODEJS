@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/student/<%= student.stuNo%>?_method=put" method="post">
+        <div>
+            <label>
+                학번 : <input name="stuNo" type='text' value="<%= student.stuNo%>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                이름 : <input name="stuName" type='text' value="<%= student.stuName%>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                학과 : <input name="stuDept" type='text' value="<%= student.stuDept%>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                학년 : <input name="stuGrade" type='text' value="<%= student.stuGrade%>"/>
+            </label>
+        </div>
+        <button>수정하기</button>
+    </form>
+</body>
+</html>
